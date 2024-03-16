@@ -1,24 +1,20 @@
-import { useEffect, useState } from "react";
-
 import TrackRow from "./TrackRow";
+import strings from "../constants/strings.json";
+import { useState } from "react";
 
 // import { useState } from "react";
 
 const TracksListing = ({ tracks }: any) => {
   const [currentTrack, setCurrentTrack] = useState("");
 
-  useEffect(() => {
-    console.log(currentTrack);
-  }, [currentTrack]);
-
   return (
-    <table className="tracksList">
+    <table className="p-4 border-collapse">
       <thead>
-        <tr style={{ textAlign: "left", borderBottom: "1px solid white" }}>
-          <th className="eachCell">#</th>
-          <th className="eachCell">Title</th>
-          <th className="eachCell">Album</th>
-          <th className="eachCell">Date Added</th>
+        <tr className="text-left border-b border-solid border-white">
+          <th className="text-white p-3">#</th>
+          <th className="text-white p-3">{strings.TITLE}</th>
+          <th className="text-white p-3">{strings.ALBUM}</th>
+          <th className="text-white p-3">{strings.DATE_ADDED}</th>
         </tr>
       </thead>
       <tbody>
@@ -32,8 +28,6 @@ const TracksListing = ({ tracks }: any) => {
             isPlaying={
               eachTrack.preview_url && currentTrack === eachTrack.preview_url
             }
-            // onPlay={() => handlePlayTrack(eachTrack.preview_url)}
-            // onPause={handlePauseTrack}
           />
         ))}
       </tbody>

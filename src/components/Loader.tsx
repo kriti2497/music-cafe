@@ -1,6 +1,6 @@
 const Loader = () => {
   return (
-    <div className="lds-facebook">
+    <div className="lds-facebook m-auto">
       <div></div>
       <div></div>
       <div></div>

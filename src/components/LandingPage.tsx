@@ -48,7 +48,7 @@ const LandingPage = () => {
   return (
     <>
       <Navbar submitHandler={submitHandler} setSearchVal={setSearchVal} />
-      <div className="landing">
+      <div className="flex flex-col">
         {artistDetailsLoader && <Loader />}
 
         {!artistDetails?.name && !artistDetailsLoader && <InitialPage />}
